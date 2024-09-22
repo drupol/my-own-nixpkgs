@@ -5,6 +5,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     systems.url = "github:nix-systems/default";
+    pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
   };
 
   outputs =
@@ -14,9 +15,9 @@
 
       imports = [
         inputs.flake-parts.flakeModules.easyOverlay
+        inputs.pkgs-by-name-for-flake-parts.flakeModule
         ./imports/overlay.nix
         ./imports/formatter.nix
-        ./imports/pkgs-by-name.nix
         ./imports/pkgs-all.nix
       ];
     };

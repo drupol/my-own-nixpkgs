@@ -1,15 +1,8 @@
-{ inputs, lib, ... }:
+{ ... }:
 {
 
   perSystem =
-    {
-      config,
-      self',
-      inputs',
-      pkgs,
-      system,
-      ...
-    }:
+    { pkgs, ... }:
     {
       packages = {
         example2 = pkgs.callPackage ../pkgs/example2 { };

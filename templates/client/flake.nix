@@ -13,25 +13,9 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import systems;
 
-      imports = [ ./imports/overlay.nix ];
-
-      perSystem =
-        {
-          config,
-          self',
-          inputs',
-          pkgs,
-          system,
-          ...
-        }:
-        {
-          devShells.default = pkgs.mkShellNoCC {
-            name = "default";
-            packages = [
-              pkgs.example1
-              pkgs.example2
-            ];
-          };
-        };
+      imports = [
+        ./imports/devShells.nix
+        ./imports/overlay.nix
+      ];
     };
 }
