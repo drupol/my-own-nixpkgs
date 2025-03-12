@@ -5,10 +5,9 @@
     { pkgs, ... }:
     {
       devShells.default = pkgs.mkShell {
-        name = "default";
         packages = [
-          pkgs.example1
-          pkgs.example2
+          pkgs.local.example1
+          pkgs.local.example2
         ];
       };
     };

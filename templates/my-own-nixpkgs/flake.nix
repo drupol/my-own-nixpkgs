@@ -2,8 +2,8 @@
   description = "Description for the project";
 
   inputs = {
-    flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
     systems.url = "github:nix-systems/default";
     pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
   };
@@ -22,7 +22,8 @@
         ./imports/pkgs-by-name.nix
       ];
 
-      perSystem = { config, pkgs, ... }:
+      perSystem =
+        { config, pkgs, ... }:
         {
           devShells.default = pkgs.mkShell {
             packages = [
