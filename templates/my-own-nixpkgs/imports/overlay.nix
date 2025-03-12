@@ -6,10 +6,11 @@
     {
       _module.args.pkgs = import inputs.nixpkgs {
         inherit system;
-        overlays = [ inputs.self.overlays.default ];
-        config = { };
+        overlays = [
+          (final: prev: {
+            local = config.packages;
+          })
+        ];
       };
-
-      overlayAttrs = config.packages;
     };
 }

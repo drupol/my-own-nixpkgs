@@ -14,11 +14,21 @@
       systems = import systems;
 
       imports = [
-        inputs.flake-parts.flakeModules.easyOverlay
         inputs.pkgs-by-name-for-flake-parts.flakeModule
-        ./imports/overlay.nix
         ./imports/formatter.nix
+        ./imports/overlay.nix
         ./imports/pkgs-all.nix
+        ./imports/pkgs-by-name.nix
       ];
+
+      perSystem = { config, pkgs, ... }:
+        {
+          devShells.default = pkgs.mkShell {
+            packages = [
+              config.packages.example1
+              pkgs.local.example2
+            ];
+          };
+        };
     };
 }
