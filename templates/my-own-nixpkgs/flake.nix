@@ -17,6 +17,7 @@
         inputs.pkgs-by-name-for-flake-parts.flakeModule
         ./imports/formatter.nix
         ./imports/overlay.nix
+        ./imports/pkgs.nix
         ./imports/pkgs-all.nix
         ./imports/pkgs-by-name.nix
       ];

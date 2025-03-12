@@ -1,16 +1,14 @@
-{ inputs, ... }:
+{ withSystem, ... }:
 
 {
-  perSystem =
-    { config, system, ... }:
-    {
-      _module.args.pkgs = import inputs.nixpkgs {
-        inherit system;
-        overlays = [
-          (final: prev: {
-            local = config.packages;
-          })
-        ];
-      };
-    };
+  flake = {
+    overlays.default =
+      final: prev:
+      withSystem prev.stdenv.hostPlatform.system (
+        { config, ... }:
+        {
+          local = config.packages;
+        }
+      );
+  };
 }
