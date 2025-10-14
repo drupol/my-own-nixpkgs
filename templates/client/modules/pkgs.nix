@@ -6,8 +6,7 @@
     {
       _module.args.pkgs = import inputs.nixpkgs {
         inherit system;
-        overlays = [ inputs.my-own-nixpkgs.overlays.default ];
-        config = { };
+        overlays = [ inputs.my-own-nixpkgs.overlays ];
       };
     };
 }

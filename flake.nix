@@ -2,19 +2,12 @@
   description = "Nix templates for building your own nixpkgs repository and use it";
 
   inputs = {
-    flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     systems.url = "github:nix-systems/default";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
-  outputs =
-    inputs@{ flake-parts, systems, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import systems;
-
-      imports = [
-        ./imports/formatter.nix
-        ./imports/templates.nix
-      ];
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

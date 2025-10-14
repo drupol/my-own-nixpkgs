@@ -7,7 +7,7 @@
       _module.args.pkgs = import inputs.nixpkgs {
         inherit system;
         overlays = [
-          (final: prev: {
+          (_final: _prev: {
             local = config.packages;
           })
         ];
