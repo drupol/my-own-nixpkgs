@@ -16,9 +16,13 @@ Nix developers. However, maintaining your own repository can be advantageous for
 experimental, personal, or organization-specific packages that require specific
 configurations or are not yet ready for broader adoption.
 
+It also includes a template to create your own infrastructure using Nix.
+
 ## Usage
 
 ### Setting Up Your Own Repository
+
+This repository can be used to host your custom Nix packages.
 
 1. Use the `my-own-nixpkgs` template
    `nix flake new --template git+https://github.com/drupol/my-own-nixpkgs#my-own-nixpkgs ./my-repo`
@@ -70,6 +74,14 @@ To use this repository as an overlay in another project, follow these steps:
    ```
 
 [RFC140]: https://github.com/NixOS/rfcs/pull/140
+
+### Create your infrastructure repository
+
+This repository can be used to host your own infrastructure using Nix.
+
+1. Use the `infra` template
+   `nix flake new --template git+https://github.com/drupol/my-own-nixpkgs#infra ./my-infra`
+   as a starting point
 
 ### Examples
 
