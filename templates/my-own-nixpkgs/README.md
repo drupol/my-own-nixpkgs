@@ -12,9 +12,9 @@ other projects.
 ### Setting Up
 
 1. Fork this repository.
-2. Begin adding packages to the `pkgs/by-name` directory. Follow the
-   same approach as adding packages in `nixpkgs`. Similar to [RFC140], packages
-   added in this directory will be automatically discovered.
+2. Begin adding packages to the `pkgs/by-name` directory. Follow the same
+   approach as adding packages in `nixpkgs`. Similar to [RFC140], packages added
+   in this directory will be automatically discovered.
    - Create a new directory for each package.
    - Inside each directory, create a `package.nix` file.
 3. Optionally, you can add packages directly to the `pkgs/` directory and
@@ -67,7 +67,8 @@ how packages can be structured.
   packages
 - Add a binary cache to your repository to speed up builds and avoid
   recompilation using [Cachix](https://cachix.org/)
-- This project uses a flake framework, we recommend to use [flake-parts](https://flake.parts)
+- This project uses a flake framework, we recommend to use
+  [flake-parts](https://flake.parts)
 
 ## Contributing
 
@@ -82,6 +83,7 @@ we invested in this package.
 Sponsor me on [Github][github sponsors link] and/or any of [the
 contributors][6].
 
-[donate github]: https://img.shields.io/badge/Sponsor-Github-brightgreen.svg?style=flat-square
+[donate github]:
+  https://img.shields.io/badge/Sponsor-Github-brightgreen.svg?style=flat-square
 [github sponsors link]: https://github.com/sponsors/drupol
 [6]: https://github.com/drupol/my-own-nixpkgs/graphs/contributors

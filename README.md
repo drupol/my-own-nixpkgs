@@ -2,8 +2,8 @@
 
 # My Custom Nixpkgs Overlay
 
-This project provides templates for creating your own collection of custom
-Nix expressions, similar to what is done in [`nixpkgs`]. It includes a `default`
+This project provides templates for creating your own collection of custom Nix
+expressions, similar to what is done in [`nixpkgs`]. It includes a `default`
 [overlay](https://wiki.nixos.org/wiki/Overlays) that exposes all custom
 packages, facilitating their integration into other projects.
 
@@ -20,9 +20,11 @@ configurations or are not yet ready for broader adoption.
 
 ### Setting Up Your Own Repository
 
-1. Use the `my-own-nixpkgs` template `nix flake new --template git+https://github.com/drupol/my-own-nixpkgs#my-own-nixpkgs ./my-repo` as a starting point
-2. Begin adding packages to the `pkgs/by-name` directory. Follow the
-   same approach as adding packages in `nixpkgs` (similar to [RFC140]). Packages
+1. Use the `my-own-nixpkgs` template
+   `nix flake new --template git+https://github.com/drupol/my-own-nixpkgs#my-own-nixpkgs ./my-repo`
+   as a starting point
+2. Begin adding packages to the `pkgs/by-name` directory. Follow the same
+   approach as adding packages in `nixpkgs` (similar to [RFC140]). Packages
    added in this directory will be automatically discovered.
    - Create a new directory for each package.
    - Inside each directory, create a `package.nix` file.
@@ -31,7 +33,9 @@ configurations or are not yet ready for broader adoption.
 
 ### Using Your Own Repository
 
-Use the `client` template `nix flake new --template git+https://github.com/drupol/my-own-nixpkgs#client ./my-nix-project` as a starting point or follow the manual steps hereunder.
+Use the `client` template
+`nix flake new --template git+https://github.com/drupol/my-own-nixpkgs#client ./my-nix-project`
+as a starting point or follow the manual steps hereunder.
 
 To use this repository as an overlay in another project, follow these steps:
 
@@ -78,7 +82,8 @@ how packages can be structured.
   packages
 - Add a binary cache to your repository to speed up builds and avoid
   recompilation using [Cachix](https://cachix.org/)
-- This project uses a flake framework, we recommend to use [flake-parts](https://flake.parts)
+- This project uses `flake-parts`, a flake framework. We recommend to it
+  [flake-parts](https://flake.parts)
 
 ## Contributing
 
@@ -93,7 +98,8 @@ we invested in this package.
 Sponsor me on [Github][github sponsors link] and/or any of [the
 contributors][6].
 
-[donate github]: https://img.shields.io/badge/Sponsor-Github-brightgreen.svg?style=flat-square
+[donate github]:
+  https://img.shields.io/badge/Sponsor-Github-brightgreen.svg?style=flat-square
 [github sponsors link]: https://github.com/sponsors/drupol
 [6]: https://github.com/drupol/my-own-nixpkgs/graphs/contributors
 [`nixpkgs`]: https://github.com/NixOS/nixpkgs

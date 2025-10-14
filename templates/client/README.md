@@ -1,3 +1,5 @@
+[![Donate!][donate github]][github sponsors link]
+
 # My Custom Nixpkgs Overlay
 
 This project uses [flake-parts](https://flake.parts), a flake framework to
@@ -16,6 +18,7 @@ we invested in this package.
 Sponsor me on [Github][github sponsors link] and/or any of [the
 contributors][6].
 
-[donate github]: https://img.shields.io/badge/Sponsor-Github-brightgreen.svg?style=flat-square
+[donate github]:
+  https://img.shields.io/badge/Sponsor-Github-brightgreen.svg?style=flat-square
 [github sponsors link]: https://github.com/sponsors/drupol
 [6]: https://github.com/drupol/my-own-nixpkgs/graphs/contributors
