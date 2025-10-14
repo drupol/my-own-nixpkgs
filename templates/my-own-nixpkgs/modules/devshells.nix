@@ -5,7 +5,7 @@
   perSystem =
     { config, pkgs, ... }:
     {
-      make-shells.default = pkgs.mkShell {
+      make-shells.default = {
         packages = [
           config.packages.example1
           pkgs.local.example2
